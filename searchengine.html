@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>QuaryX</title>
+  <link rel="stylesheet" href="searchengine.css">
+ 
+
+
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <select onchange="chooseengine()" id="engineselector">
+    <optgroup label="Engines">
+      <option value="file:///c%3A/Users/Ato/Documents/vscode/searchengine.html" selected>QuaryX</option>
+      <option value="https://www.google.com" >Google</option>
+      <option value="https://wikipedia.com">Wikipedia</option>
+      <option value="https://duckduckgo.com">DuckDuckGo</option>
+      <option value="https://www.bing.com">Bing</option>
+      <option value="https://search.yahoo.com">Yahoo</option>
+      <option value="https://www.baidu.com">Baidu</option>
+      <option value="https://yandex.com">Yandex</option>
+      <option value="https://www.ask.com">Ask</option>
+      <option value="https://www.ecosia.org">Ecosia</option>
+      <option value="https://www.startpage.com">Startpage</option>
+      <option value="https://www.qwant.com">Qwant</option>
+      <option value="https://www.dogpile.com">Dogpile</option>
+      <option value="https://www.wolframalpha.com">WolframAlpha</option>
+    </optgroup>
+  </select>
+
+  <h1>Quary<span>X</span></h1>
+
+  <div>
+    <input list="websites" id="siteInput" placeholder="Search">
+    <datalist id="websites">
+      <option value="Youtube">
+      <option value="Google">
+      <option value="Facebook">
+      <option value="Twitter">
+      <option value="Instagram">
+      <option value="Discord">
+      <option value="Wikipedia">
+      <option value="Steam">
+      <option value="Osu">
+      <option value="ChatGpt">
+      <option value="Google Translate">
+      <option value="Reddit">
+      <option value="Netflix">
+      <option value="Twitch">
+      <option value="Amazon">
+      <option value="eBay">
+      <option value="Pinterest">
+      <option value="LinkedIn">
+      <option value="Snapchat">
+      <option value="Telegram">
+      <option value="TikTok">
+      <option value="Zoom">
+      <option value="Microsoft">
+      <option value="Apple">
+      <option value="GitHub">
+      <option value="Stack Overflow">
+      <option value="Quora">
+      <option value="Spotify">
+      <option value="SoundCloud">
+      <option value="Google Maps">
+      <option value="Google Drive">
+      <option value="Google Docs">
+      <option value="ProtonMail">
+      <option value="Yahoo Mail">
+      <option value="Gmail">
+      <option value="Outlook">
+      <option value="Trello">
+      <option value="Notion">
+      <option value="Figma">
+      <option value="Canva">
+      <option value="IMDB">
+      <option value="CNN">
+      <option value="BBC">
+      <option value="NYTimes">
+      <option value="The Guardian">
+      <option value="OpenAI">
+    </datalist>
+    <button onclick="goToWebsite()"><i class="fas fa-search"></i></button>
+  </div>
+<h4 style="margin-top: 25%; color: white; margin-left: 2%;">Copyright©Ato20372</h4>
+  <script>
+    function goToWebsite() {
+      const input = document.getElementById('siteInput').value.trim().toLowerCase();
+      const selectedEngine = document.getElementById('engineselector').value;
+
+      const urls = {
+        youtube: "https://www.youtube.com",
+        google: "https://www.google.com",
+        facebook: "https://www.facebook.com",
+        twitter: "https://www.twitter.com",
+        instagram: "https://www.instagram.com",
+        discord: "https://discord.com/",
+        wikipedia: "https://wikipedia.com",
+        steam: "https://store.steampowered.com/",
+        osu: "https://osu.ppy.sh/",
+        chatgpt: "https://chatgpt.com/",
+        "google translate": "https://translate.google.com/?sl=en&tl=ar&op=translate",
+        reddit: "https://www.reddit.com",
+        netflix: "https://www.netflix.com",
+        twitch: "https://www.twitch.tv",
+        amazon: "https://www.amazon.com",
+        ebay: "https://www.ebay.com",
+        pinterest: "https://www.pinterest.com",
+        linkedin: "https://www.linkedin.com",
+        snapchat: "https://www.snapchat.com",
+        telegram: "https://web.telegram.org",
+        tiktok: "https://www.tiktok.com",
+        zoom: "https://zoom.us",
+        microsoft: "https://www.microsoft.com",
+        apple: "https://www.apple.com",
+        github: "https://github.com",
+        "stack overflow": "https://stackoverflow.com",
+        quora: "https://www.quora.com",
+        spotify: "https://www.spotify.com",
+        soundcloud: "https://soundcloud.com",
+        "google maps": "https://maps.google.com",
+        "google drive": "https://drive.google.com",
+        "google docs": "https://docs.google.com",
+        protonmail: "https://proton.me",
+        "yahoo mail": "https://mail.yahoo.com",
+        gmail: "https://mail.google.com",
+        outlook: "https://outlook.live.com",
+        trello: "https://trello.com",
+        notion: "https://www.notion.so",
+        figma: "https://www.figma.com",
+        canva: "https://www.canva.com",
+        imdb: "https://www.imdb.com",
+        cnn: "https://www.cnn.com",
+        bbc: "https://www.bbc.com",
+        nytimes: "https://www.nytimes.com",
+        "the guardian": "https://www.theguardian.com",
+        openai: "https://www.openai.com"
+      };
+
+      if (urls[input]) {
+        window.open(urls[input], "_blank");
+      } else if (input !== "") {
+        const searchEngines = {
+          "https://www.google.com": "https://www.google.com/search?q=",
+          "https://wikipedia.com": "https://en.wikipedia.org/wiki/Special:Search?search=",
+          "https://duckduckgo.com": "https://duckduckgo.com/?q=",
+          "https://www.bing.com": "https://www.bing.com/search?q=",
+          "https://search.yahoo.com": "https://search.yahoo.com/search?p=",
+          "https://www.baidu.com": "https://www.baidu.com/s?wd=",
+          "https://yandex.com": "https://yandex.com/search/?text=",
+          "https://www.ask.com": "https://www.ask.com/web?q=",
+          "https://www.ecosia.org": "https://www.ecosia.org/search?q=",
+          "https://www.startpage.com": "https://www.startpage.com/do/search?q=",
+          "https://www.qwant.com": "https://www.qwant.com/?q=",
+          "https:/www.dogpile.com": "https://www.dogpile.com/serp?q=",
+          "https://www.wolframalpha.com": "https://www.wolframalpha.com/input?i="
+        };
+
+        const searchBase = searchEngines[selectedEngine] || "https://www.google.com/search?q=";
+        window.open(searchBase + encodeURIComponent(input), "_blank");
+      } else {
+        alert("Please enter a site or a question.");
+      }
+    }
+
+    document.getElementById('siteInput').addEventListener('keydown', function (event) {
+      if (event.key === 'Enter') {
+        goToWebsite();
+      }
+    });
+
+    function chooseengine() {
+
+    }
+  </script>
+</body>
+</html>
